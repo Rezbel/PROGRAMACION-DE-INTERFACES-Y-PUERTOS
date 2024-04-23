@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(224, 255, 235);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label_2">
     <property name="geometry">
@@ -22,6 +25,12 @@
       <width>111</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="text">
      <string>Desde richtext</string>
@@ -43,14 +52,20 @@
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>240</x>
+      <x>220</x>
       <y>20</y>
-      <width>111</width>
+      <width>171</width>
       <height>31</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="text">
-     <string>Desde background.css</string>
+     <string>Desde background</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_5">
@@ -90,9 +105,15 @@
      <rect>
       <x>430</x>
       <y>20</y>
-      <width>111</width>
+      <width>161</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="text">
      <string>Desde border-image</string>
@@ -101,11 +122,17 @@
    <widget class="QLabel" name="label_8">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>140</x>
       <y>180</y>
       <width>111</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="text">
      <string>Desde image</string>
@@ -114,7 +141,7 @@
    <widget class="QLabel" name="label_9">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>140</x>
       <y>210</y>
       <width>111</width>
       <height>101</height>
@@ -130,11 +157,17 @@
    <widget class="QLabel" name="label_10">
     <property name="geometry">
      <rect>
-      <x>220</x>
+      <x>330</x>
       <y>180</y>
       <width>111</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="text">
      <string>Pixmap</string>
@@ -143,7 +176,7 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>220</x>
+      <x>330</x>
       <y>220</y>
       <width>111</width>
       <height>91</height>
@@ -166,7 +199,7 @@
      <x>0</x>
      <y>0</y>
      <width>608</width>
-     <height>18</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

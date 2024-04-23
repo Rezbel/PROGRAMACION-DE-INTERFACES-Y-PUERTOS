@@ -19,7 +19,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         }
 
         self.dial.setMinimum = 1
-        self.dial.setMinimum = 5
+        self.dial.setMinimum = 4
         self.dial.setSingleStep = 1
         self.dial.value = 1
         self.dial.valueChanged.connect(self.cambia)
@@ -28,7 +28,8 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
 
         dataClave= self.dial.value
         imagen= self.datos_Equipo[dataClave][-1]
-        self.label_11.setPixmap(QtGui. QPixmap(imagen))
+        self.label_11.setPixmap(QtGui.QPixmap(imagen))
+
     # Área de los Slots
 
 if __name__ == "__main__":

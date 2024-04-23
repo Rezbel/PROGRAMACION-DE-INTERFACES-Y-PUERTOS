@@ -18,18 +18,19 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
             4: ["Juarez Beltran Moses Eduardo", "Estudiar", 20, "c+", ":/Variadas/Imagenes/Eduardo.jpg"]
         }
 
-        self.verticalSlider.setMinimum (1)
-        self.verticalSlider.setMinimum (5)
-        self.verticalSlider.setSingleStep (1)
-        self.verticalSlider.value (1)
+        self.verticalSlider.setMinimum(1)
+        self.verticalSlider.setMaximum(4)
+        self.verticalSlider.setSingleStep(1)
+        self.verticalSlider.setValue(1)
         self.verticalSlider.valueChanged.connect(self.cambia)
 
-    def cambia(self):
-
-        dataClave= self.dial.value
-        imagen= self.datos_Equipo[dataClave][-1]
-        self.label_11.setPixmap(QtGui. QPixmap(imagen))
     # Área de los Slots
+    def cambia(self):
+        dataClave= self.dial.value()
+        print(dataClave)
+        imagen = self.datos_Equipo[dataClave][-1]
+        self.label_11.setPixmap(QtGui.QPixmap(imagen))
+
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
