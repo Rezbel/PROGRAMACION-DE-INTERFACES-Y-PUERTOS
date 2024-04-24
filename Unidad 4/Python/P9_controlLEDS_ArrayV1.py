@@ -1,21 +1,26 @@
 import serial
 import sys
-from PyQt5 import uic, QtWidgets, QtGui
-from PyQt5.QtWidgets import QMessageBox
-
-qtCreatorFile = "P15_MaquinaEstados_SumaNumeros.ui"  # Nombre del archivo aquí.
+from PyQt5 import uic, QtWidgets, QtGui, QtCore
+qtCreatorFile = "P9_controlLEDS_ArrayV1.ui"  # Nombre del archivo aquí.
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
-
 class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
         QtWidgets.QMainWindow.__init__(self)
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
+        self.arduino = None
 
         # Área de los Signals
+        self.btn_1.clicked.connect(self.funcion)
+        self.btn_2.clicked.connect(self.funcion)
+        self.btn_3.clicked.connect(self.funcion)
+        self.btn_4.clicked.connect(self.funcion)
+        self.btn_5.clicked.connect(self.funcion)
+        self.btn_6.clicked.connect(self.funcion)
+        self.btn_7.clicked.connect(self.funcion)
+        self.btn_8.clicked.connect(self.funcion)
+
         self.btn_accion.clicked.connect(self.accion)
-        self.arduino = None
-        self.btn_enviar.clicked.connect(self.enviar_valores)
 
     #Area de Slots
     def accion(self):
@@ -30,23 +35,12 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         else:
             self.arduino.open()
             self.btn_accion.setText("DESCONECTAR")
-
-    def enviar_valores(self):
+    def funcion(self, idx_led):
         if self.arduino is not None and self.arduino.isOpen():
-            valorA = int(self.txt_valorA.text())
-            valorB = int(self.txt_valorB.text())
-            self.arduino.write((str(valorA) + "," + str(valorB) + "\n").encode())
-            respuesta = self.arduino.readline().decode().strip()
-            QMessageBox.information(self, "Resultado", f"Resultado: {respuesta}")
-            self.preguntar_repetir()
-        else:
-            QMessageBox.warning(self, "Error", "Arduino no está conectado.")
-
-    def preguntar_repetir(self):
-        repetir = QMessageBox.question(self, "Repetir proceso", "¿Desea repetir el proceso?", QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
-        if repetir == QMessageBox.Yes:
-            self.txt_valorA.clear()
-            self.txt_valorB.clear()
+            self.sender.text()
+            val = "1" if self.estado_led == 1 else "0" + "\n"
+            print(val)
+            self.arduino.write(val.encode())
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)

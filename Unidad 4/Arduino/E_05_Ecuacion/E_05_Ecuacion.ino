@@ -58,7 +58,7 @@ void loop() {
       if (v == 0){
         estado = 0;
       } else {
-        estado++;
+        estado = 7;
       }
     }
   }
